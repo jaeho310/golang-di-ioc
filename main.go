@@ -8,7 +8,7 @@ import (
 
 func main() {
 	typeOfController := "tv"
-	myRemoteController := getAirConditionalRemoteController(typeOfController)
+	myRemoteController := getRemoteController(typeOfController)
 
 	result, err := myRemoteController.TrunOnMachine()
 	if err != nil {
@@ -19,7 +19,7 @@ func main() {
 
 }
 
-func getAirConditionalRemoteController(
+func getRemoteController(
 	typeOfController string) *interfaces.RemoteController {
 	if typeOfController == "tv" {
 		return interfaces.RemoteController{}.New(injectAirConditional())
